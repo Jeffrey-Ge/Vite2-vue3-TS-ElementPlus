@@ -1,4 +1,6 @@
 // 按需加载element
+import type { App } from 'vue'
+
 import {
   ElAlert,
   ElAside,
@@ -37,14 +39,15 @@ import {
   ElFormItem,
   ElHeader,
   ElIcon,
-  ElImage, ElInfiniteScroll, ElInput,
+  ElImage,
+  ElInput,
   ElInputNumber,
-  ElLink, ElLoading, ElMain,
+  ElLink,
+  ElMain,
   ElMenu,
   ElMenuItem,
-  ElMenuItemGroup, ElMessage,
-  ElMessageBox,
-  ElNotification, ElOption,
+  ElMenuItemGroup,
+  ElOption,
   ElOptionGroup,
   ElPageHeader,
   ElPagination,
@@ -63,20 +66,29 @@ import {
   ElStep,
   ElSteps,
   ElSubmenu,
-  ElSwitch, ElTable,
-  ElTableColumn, ElTabPane, ElTabs,
-  ElTag, ElTimeline,
-  ElTimelineItem, ElTimePicker,
-  ElTimeSelect, ElTooltip,
+  ElSwitch,
+  ElTabPane,
+  ElTable,
+  ElTableColumn,
+  ElTabs,
+  ElTag,
+  ElTimePicker,
+  ElTimeSelect,
+  ElTimeline,
+  ElTimelineItem,
+  ElTooltip,
   ElTransfer,
   ElTree,
-  ElUpload
+  ElUpload,
+  ElInfiniteScroll,
+  ElLoading,
+  ElMessage,
+  ElMessageBox,
+  ElNotification
 } from 'element-plus'
+
 import locale from 'element-plus/lib/locale'
 import lang from 'element-plus/lib/locale/lang/zh-cn'
-import type { App } from 'vue'
-
-
 
 // 设置语言
 locale.use(lang)
@@ -170,18 +182,19 @@ const plugins = [
   ElNotification
 ]
 
+ import ElementPlus from'element-plus'
 
 export function setupElementPlus(app: App<Element>): void {
 
-  components.forEach((component: any) => {
-    app.component(component.name, component)
-  })
+  // components.forEach((component: any) => {
+  //   app.component(component.name, component)
+  // })
 
-  plugins.forEach((plugin: any) => {
-    app.use(plugin)
-  })
-
-  // app.use(ElementPlus);
+  // plugins.forEach((plugin: any) => {
+  //   app.use(plugin)
+  // })
+  console.log('elementPlus---',ElementPlus);
+  app.use(ElementPlus);
   // 全局配置
   app.config.globalProperties.$ELEMENT = { size: 'small', zIndex: 3000 }
 }

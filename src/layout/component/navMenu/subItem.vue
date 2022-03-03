@@ -9,14 +9,14 @@
         <i :class="val.meta.icon"></i>
         <span>{{ val.meta.title }}</span>
       </template>
-      <sub-item :chil="val.children" />
+      <sub-item :child="val.children" />
     </el-submenu>
     <el-menu-item :index="val.path" :key="val.path" v-else>
       <template
         v-if="!val.meta.isLink"
       >
         <i :class="val.meta.icon ? val.meta.icon : ''"></i>
-        <span>{{ val.meta.title }}</span>
+        <span class="ml-10">{{ val.meta.title }}</span>
       </template>
       <template v-else>
         <a :href="val.meta.isLink" target="_blank">
@@ -35,7 +35,7 @@
   export default defineComponent({
     name: 'navMenuSubItem',
     props: {
-      chil: {
+      child: {
         type: Array as PropType<Menu[]>,
         default: () => []
       }
@@ -43,7 +43,7 @@
     setup(props) {
       // 获取父级菜单数据
       const chils = computed(() => {
-        return props.chil
+        return props.child
       })
 
       return {

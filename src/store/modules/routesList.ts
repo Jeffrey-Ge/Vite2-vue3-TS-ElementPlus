@@ -1,6 +1,6 @@
-import { RootStateTypes, RoutesListState } from 'store/interface/index';
 import { Module } from 'vuex';
-import { AppRouteRecordRaw } from '../interface/index';
+import { RoutesListState, RootStateTypes } from 'store/interface/index';
+import { AppRouteRecordRaw } from '../interface/index'
 const routesListModule: Module<RoutesListState, RootStateTypes> = {
 	namespaced: true,
 	state: {
@@ -8,7 +8,7 @@ const routesListModule: Module<RoutesListState, RootStateTypes> = {
       {
         meta: {
           auth: ['admin', 'test'],
-          icon: 'el-icon-house ',
+          icon: 'iconfont el-icon-menu',
           isAffix: true,
           isHide: false,
           isKeepAlive: true,
@@ -21,37 +21,39 @@ const routesListModule: Module<RoutesListState, RootStateTypes> = {
       {
         meta: {
           auth: ['admin', 'test'],
-          icon: 'el-icon-ice-cream-round',
-          isAffix: false,
+          icon: 'iconfont el-icon-menu',
+          isAffix: true,
           isHide: false,
           isKeepAlive: true,
-          title: 'demo',
+          title: '数据报送',
           index: '2'
         },
-        name: 'demo',
-        path: '/demo'
+        name: 'dataTransmit',
+        path: '/dataTransmit',
+        children: [
+          {
+            meta: {
+              auth: ['admin', 'test'],
+              icon: '',
+              isAffix: false,
+              isHide: false,
+              isKeepAlive: true,
+              title: '列表',
+              index: '3'
+            },
+            name: 'dataTransmitList',
+            path: '/dataTransmit/list'
+          }
+        ]
       },
       {
         meta: {
           auth: ['admin', 'test'],
-          icon: 'el-icon-menu',
+          icon: 'iconfont el-icon-s-grid',
           isAffix: false,
           isHide: false,
           isKeepAlive: true,
-          title: 'svg-icon',
-          index: '3'
-        },
-        name: 'svgIcon',
-        path: '/svgIcon'
-      },
-      {
-        meta: {
-          auth: ['admin', 'test'],
-          icon: 'el-icon-s-grid',
-          isAffix: false,
-          isHide: false,
-          isKeepAlive: true,
-          title: 'element-icon',
+          title: 'elementIcon',
           index: '4'
         },
         name: 'elementIcon',

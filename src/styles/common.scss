@@ -1,0 +1,103 @@
+/* ----------------------------------------------------------------
+  Display
+----------------------------------------------------------------- */
+@each $display in block, none, inline, inline-block, flex, inline-flex, table {
+  .display-#{$display} {
+    display: $display !important;
+  }
+}
+
+/* ----------------------------------------------------------------
+  Flex
+----------------------------------------------------------------- */
+// 项目的排列方向
+.flex-row {
+  flex-direction: row !important;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse !important;
+}
+.flex-column {
+  flex-direction: column !important;
+}
+.flex-column-reverse {
+  flex-direction: column-reverse !important;
+}
+
+// 项目在主轴上的对齐方式
+@each $position in flex-start, flex-end, center, space-between, space-around {
+  .justify-content-#{$position} {
+    justify-content: $position !important;
+  }
+}
+
+// 设置各个弹性子元素的宽度是一样
+.flex-fill {
+  flex: 1 1 auto !important;
+}
+// 轴线排列 换行
+.flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse !important;
+}
+
+// 项目在交叉轴上对齐方式
+@each $position in baseline, start, end, flex-end, center, around, stretch {
+  .align-items-#{$position} {
+    align-items: $position !important;
+  }
+}
+
+/* ----------------------------------------------------------------
+  Spacing
+----------------------------------------------------------------- */
+@for $i from 0 through 20 {
+  .mt-#{$i*5} {
+    margin-top: $i * 5 + px !important;
+  }
+}
+@for $i from 0 through 10 {
+  .mb-#{$i*5} {
+    margin-bottom: $i * 5 + px !important;
+  }
+}
+@for $i from 0 through 10 {
+  .ml-#{$i*5} {
+    margin-left: $i * 5 + px !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .mr-#{$i*5} {
+    margin-right: $i * 5 + px !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .pr-#{$i * 5} {
+    padding-right: 5 * $i + px !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .pl-#{$i * 5} {
+    padding-left: 5 * $i + px !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .pt-#{$i * 5} {
+    padding-top: 5 * $i + px !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .pb-#{$i * 5} {
+    padding-bottom: 5 * $i + px !important;
+  }
+}

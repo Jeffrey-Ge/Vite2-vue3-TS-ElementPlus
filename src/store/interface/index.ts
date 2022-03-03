@@ -52,9 +52,7 @@ export interface ThemeConfigState {
   isShowLogo: boolean
   isBreadcrumbIcon: boolean
   isShowLogoChange: boolean
-  isCacheTagsView: boolean
   isUniqueOpened: boolean
-  isTagsviewIcon: false
   globalTitle: string
   animation: string
   layout: string
@@ -69,16 +67,11 @@ export interface RoutesListState {
   routesList: Array<AppRouteRecordRaw>
 }
 
-export interface TagsViewRoutesState {
-  tagsViewRoutes: Array<Menu>
-}
-
 // 主接口(顶级类型声明)
 export interface RootStateTypes {
   themeConfig: ThemeConfigState
   app: App
   routesList: RoutesListState
-  tagsViewRoutes: TagsViewRoutesState
 }
 
 export type AppRouteModule = AppRouteRecordRaw

@@ -1,5 +1,5 @@
 <template>
-  <div class="h100 main-container">
+  <div class="h100">
     <router-view v-slot="{ Component }">
       <transition :name="setTransitionName" mode="out-in">
         <keep-alive :include="keepAliveNameList">
@@ -80,12 +80,3 @@
     }
   })
 </script>
-<style lang="scss" scoped>
-.main-container{
-  margin: 10px;
-  padding: 10px;
-  background-color:#FFF ;
-  border:1px solid #f1f2f3;
-  border-radius: 6px;
-}
-</style>

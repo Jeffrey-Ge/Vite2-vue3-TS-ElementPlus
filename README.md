@@ -1,27 +1,55 @@
-# Vue 3 + Typescript + Vite
+# vue3-element-admin
 
-This template should help get you started developing with Vue 3 and Typescript in Vite.
+🎉 基于 Vite 2.0 + Vue3.0 + ts + Vue-Router 4.0 + Vuex 4.0 + element-plus 的后台管理系统
 
-## Recommended IDE Setup
+## 简介
 
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
+[vue3-element-admin](http://admin.xueyueob.cn) 是一个后台前端解决方案，它基于 [vue3](https://v3.cn.vuejs.org/guide/migration/introduction.html) 和 [element-plus](https://element-plus.gitee.io/#/zh-CN)实现。使用了最新的前端技术栈 [vite](https://cn.vitejs.dev/)，提供最基础的框架模型，可以帮助你快速搭建中后台产品原型。PS：我是参考 [@PanJiaChen](https://github.com/PanJiaChen) 开发维护的 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)， 十分感谢大佬对开源社区做出的贡献 :)
 
-### If Using `<script setup>`
+## 前序准备
 
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
+你需要在本地安装 [node](http://nodejs.org/) 和 [git](https://git-scm.com/)。本项目技术栈基于 [typeScript](https://www.tslang.cn/docs/home.html)、[vue3](https://v3.cn.vuejs.org/)、[vuex](https://next.vuex.vuejs.org/)、[vue-router](https://next.router.vuejs.org/) 、[vite](https://cn.vitejs.dev/) 、[axios](https://github.com/axios/axios) 和 [element-plus](https://element-plus.gitee.io/#/zh-CN)，提前了解和学习这些知识会对使用本项目有很大的帮助。
 
-## Type Support For `.vue` Imports in TS
+## 开发
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
+```bash
+# 克隆项目
+git clone https://github.com/au1996/vue3-element-admin.git
 
-### If Using Volar
+# 进入项目目录
+cd vue3-element-admin
 
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
+# 安装依赖
+npm install
 
-### If Using Vetur
+# 建议修改为 taobao 源解决下载速度慢的问题
+npm config set registry https://registry.npm.taobao.org/
 
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette
-5. Search and run "Select TypeScript version" -> "Use workspace version"
+# 启动服务
+npm run dev
+```
+
+## 发布
+
+```bash
+# 构建生产环境
+npm run build
+```
+
+## 其它
+
+```bash
+# eslint代码格式检查
+npm run lint:js
+
+# stylelint代码样式检查
+npm run lint:css
+```
+
+## 浏览器支持
+
+本地开发推荐使用`Chrome`浏览器, 在火狐浏览器进行开发相对卡顿。
+
+支持现代浏览器, 不支持 IE
+
+## License

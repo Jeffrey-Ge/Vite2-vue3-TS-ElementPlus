@@ -1,16 +1,10 @@
 <template>
-  <div
-    v-if="!getThemeConfig.isCollapse"
-    class="layout-logo"
-    @click="onThemeConfigChange"
-  >
+  <div class="layout-logo" v-if="setShowLogo" @click="onThemeConfigChange">
     <img src="@/assets/logo.png" class="layout-logo-medium-img" />
-    <span>
-      {{ getThemeConfig.globalTitle }}
-    </span>
+    <span>{{ getThemeConfig.globalTitle }}</span>
   </div>
-  <div v-else class="layout-logo-collapse" @click="onThemeConfigChange">
-    <img src="@/assets/logo.png" class="layout-logo-collapse-img" />
+  <div class="layout-logo-size" v-else @click="onThemeConfigChange">
+    <img src="@/assets/logo.png" class="layout-logo-size-img" />
   </div>
 </template>
 
@@ -26,7 +20,7 @@
       const getThemeConfig = computed(() => {
         return store.state.themeConfig
       })
-      // 设置显示/隐藏 logo部分
+      // 设置显示/隐藏 logo
       const setShowLogo = computed(() => {
         let { layout, isShowLogo } = store.state.themeConfig
         return (
@@ -51,16 +45,18 @@
 
 <style scoped lang="scss">
   .layout-logo {
+    background-color: #1f2329;
     width: 220px;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: rgb(0 21 41 / 2%) 0px 1px 4px;
-    color: var(--color-primary);
-    font-size: 16px;
+    color: #f5f5f5;
+    font-size: 14px;
     cursor: pointer;
     animation: logoAnimation 0.3s ease-in-out;
+    font-weight: 600;
     &:hover {
       span {
         color: var(--color-primary-light-2);
@@ -71,7 +67,7 @@
       margin-right: 5px;
     }
   }
-  .layout-logo-collapse {
+  .layout-logo-size {
     width: 100%;
     height: 50px;
     display: flex;

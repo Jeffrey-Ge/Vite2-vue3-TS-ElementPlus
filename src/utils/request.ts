@@ -1,12 +1,12 @@
-import router, { resetRoute } from '@/router'
 import axios, {
-  AxiosError, AxiosInstance,
+  AxiosInstance,
   AxiosRequestConfig,
-  AxiosResponse
+  AxiosResponse,
+  AxiosError
 } from 'axios'
 import { ElMessage, ElMessageBox } from 'element-plus'
 
-
+import router, { resetRoute } from '@/router'
 
 function getSession(key: string) {
   let json: any = window.sessionStorage.getItem(key)

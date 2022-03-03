@@ -1,5 +1,5 @@
-import type { App } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import type { App } from 'vue'
 
 const routerHistory = createWebHistory()
 // createWebHashHistory hash 路由
@@ -22,21 +22,24 @@ const router = createRouter({
           component: ()=>import('views/home/index.vue'),
         },
         {
-          path: '/demo',
-          name:'demo',
-          component: ()=>import('views/demo/index.vue'),
-        },
-        {
-          path: '/svgIcon',
-          name: 'svgIcon',
-          component: ()=>import('views/svgIcon/index.vue'),
-        },
-        {
           path: '/elementIcon',
           name:'elementIcon',
           component: ()=>import('views/elementIcon/index.vue'),
-        }
-        
+        },
+        {
+          path: '/dataTransmit',
+          name:'dataTransmit',
+          component: () => import('views/dataTransmit/index.vue'),
+          redirect: '/dataTransmit/list',
+          children: [
+            {
+              path: 'list',
+              component: () => import('@/views/dataTransmit/List.vue'),
+              name: 'DataTransmitList',
+              meta: { title: '列表' },
+            },
+          ]
+        },
       ]
     }
   ]

@@ -1,12 +1,12 @@
 import { Module } from 'vuex';
-import { RootStateTypes, ThemeConfigState } from '../interface/index';
+import { ThemeConfigState, RootStateTypes } from '../interface/index';
 
 const themeConfigModule: Module<ThemeConfigState, RootStateTypes> = {
 	namespaced: true,
 	state: {
 		/*  --------- 界面设置  --------- */
 		// 网站主标题（菜单导航、浏览器当前网页标题）
-		globalTitle: 'Vue3-ElementPlus-Vite2',
+		globalTitle: '企业联网直报系统',
 		// 是否开启侧边栏 Logo
 		isShowLogo: true,
 		// 是否开启菜单水平折叠效果
@@ -24,13 +24,9 @@ const themeConfigModule: Module<ThemeConfigState, RootStateTypes> = {
 		// 初始化变量，用于 el-scrollbar 的高度更新，请勿删除
 		isShowLogoChange: false,
 		// 默认菜单导航背景颜色，请注意：需要同时修改 `/@/theme/common/var.scss` 对应的值
-		menuBar: '#545c64',
-		// 是否开启 TagsView 缓存
-		isCacheTagsView: false,
+		menuBar: '#12171f',
 		// 是否开启菜单手风琴效果
-		isUniqueOpened: false,
-		// 是否开启 Tagsview 图标
-		isTagsviewIcon: false,
+		isUniqueOpened: true,
 	},
 	mutations: {
 		// 设置布局配置

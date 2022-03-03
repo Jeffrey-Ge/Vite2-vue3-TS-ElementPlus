@@ -14,14 +14,14 @@
         :key="val.path"
       >
         <template #title>
-          <i :class="val.meta.icon ? val.meta.icon : ''" class="iconfont"></i>
+          <i :class="val.meta.icon ? val.meta.icon : ''"></i>
           <span>{{ val.meta.title }}</span>
         </template>
-        <SubItem :chil="val.children" />
+        <SubItem :child="val.children" />
       </el-submenu>
 
       <el-menu-item :index="val.path" :key="val.path" v-else>
-        <i :class="val.meta.icon ? val.meta.icon : ''" class="iconfont"></i>
+        <i :class="val.meta.icon ? val.meta.icon : ''"></i>
         <template
           #title
           v-if="!val.meta.isLink"
@@ -81,6 +81,7 @@ import type { PropType } from 'vue';
           : store.state.themeConfig.isCollapse
       )
 
+
       // 路由更新时
       onBeforeRouteUpdate((to) => {
         const clientWidth = document.body.clientWidth
@@ -92,7 +93,11 @@ import type { PropType } from 'vue';
         menuLists,
         setIsCollapse,
         ...toRefs(state)
+        
       }
     }
   })
-</script>
+
+</script> 
+
+
